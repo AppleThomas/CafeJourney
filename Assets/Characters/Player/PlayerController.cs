@@ -12,11 +12,14 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     bool canMove = true;
+    Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponentInChildren<Animator>();
+       
     }
 
 
@@ -41,7 +44,49 @@ public class PlayerController : MonoBehaviour
                     success = TryMove(new Vector2(0, movementInput.y));
                 }
 
+                //animator.SetBool("isMoving", success);
+                if (movementInput.x > 0)
+                {
+                    animator.SetBool("isMovingRight", false);
+                    animator.SetBool("isMovingLeft", false);
+                    animator.SetBool("isMovingUp", false);
+                    animator.SetBool("isMovingDown", false);
+                    animator.SetBool("isMovingRight", success);
+                }
+                else if (movementInput.x < 0)
+                {
+                    animator.SetBool("isMovingRight", false);
+                    animator.SetBool("isMovingLeft", false);
+                    animator.SetBool("isMovingUp", false);
+                    animator.SetBool("isMovingDown", false);
+                    animator.SetBool("isMovingLeft", success);
+                }
+                else if (movementInput.y > 0)
+                {
+                    animator.SetBool("isMovingRight", false);
+                    animator.SetBool("isMovingLeft", false);
+                    animator.SetBool("isMovingUp", false);
+                    animator.SetBool("isMovingDown", false);
+                    animator.SetBool("isMovingUp", success);
+                }
+                else if (movementInput.y < 0)
+                {
+                    animator.SetBool("isMovingRight", false);
+                    animator.SetBool("isMovingLeft", false);
+                    animator.SetBool("isMovingUp", false);
+                    animator.SetBool("isMovingDown", false);
+                    animator.SetBool("isMovingDown", success);
+                }
             }
+            // resets movement when still
+            else
+            {
+                animator.SetBool("isMovingRight", false);
+                animator.SetBool("isMovingLeft", false);
+                animator.SetBool("isMovingUp", false);
+                animator.SetBool("isMovingDown", false);
+            }
+       
             
         }
     }
