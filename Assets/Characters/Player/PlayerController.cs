@@ -44,7 +44,6 @@ public class PlayerController : MonoBehaviour
                     success = TryMove(new Vector2(0, movementInput.y));
                 }
 
-                //animator.SetBool("isMoving", success);
                 if (movementInput.x > 0)
                 {
                     animator.SetBool("isMovingRight", false);
@@ -86,8 +85,8 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("isMovingUp", false);
                 animator.SetBool("isMovingDown", false);
             }
-       
-            
+
+
         }
     }
 
