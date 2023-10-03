@@ -1210,9 +1210,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 522
-        y: 0
-        width: 112
-        height: 129
+        y: 61
+        width: 120
+        height: 68
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1352,6 +1352,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork-2_59
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 2
+        width: 119
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4168177c41974a299cb78622681c896
+      internalID: 1893762810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1418,6 +1439,7 @@ TextureImporter:
       Untitled_Artwork-2_56: 363927978
       Untitled_Artwork-2_57: 265852430
       Untitled_Artwork-2_58: -566196900
+      Untitled_Artwork-2_59: 1893762810
       Untitled_Artwork-2_6: 1398306707
       Untitled_Artwork-2_7: 1958841750
       Untitled_Artwork-2_8: 292324308

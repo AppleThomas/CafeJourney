@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 152349257}
   - component: {fileID: 152349259}
   - component: {fileID: 152349258}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 183967175}
   - component: {fileID: 183967174}
   - component: {fileID: 183967173}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Counters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -622,7 +622,7 @@ GameObject:
   - component: {fileID: 396670312}
   - component: {fileID: 396670311}
   - component: {fileID: 396670310}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: wall stuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -881,7 +881,7 @@ GameObject:
   - component: {fileID: 554417136}
   - component: {fileID: 554417135}
   - component: {fileID: 554417134}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sofa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1314,7 +1314,7 @@ GameObject:
   - component: {fileID: 647865779}
   - component: {fileID: 647865781}
   - component: {fileID: 647865780}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: On Counters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1563,7 +1563,7 @@ GameObject:
   - component: {fileID: 737060421}
   - component: {fileID: 737060420}
   - component: {fileID: 737060422}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2426,7 +2426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 890129056}
   - component: {fileID: 890129055}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2524,7 +2524,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.25
+  orthographic size: 7.875
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2669,7 +2669,7 @@ GameObject:
   - component: {fileID: 1461113250}
   - component: {fileID: 1461113249}
   - component: {fileID: 1461113248}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Behind Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2902,7 +2902,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1620272733}
   - component: {fileID: 1620272732}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GridFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2950,7 +2950,7 @@ GameObject:
   - component: {fileID: 1804384038}
   - component: {fileID: 1804384037}
   - component: {fileID: 1804384036}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: furniture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4608,7 +4608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1917762534}
   - component: {fileID: 1917762533}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Grid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
