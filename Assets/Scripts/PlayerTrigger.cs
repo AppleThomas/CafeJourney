@@ -21,7 +21,11 @@ public class PlayerTrigger : MonoBehaviour
         foreach (var o in z_CollidedObjects)
         {
             OnCollided(o.gameObject);
+
         }
+
+
+        
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -45,6 +49,11 @@ public class PlayerTrigger : MonoBehaviour
     protected virtual void OnCollided(GameObject collidedObject)
     {
         Debug.Log("Next to " + collidedObject.name);
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            collidedObject.GetComponent<InteractableObject>().OnInteract();
+        }
     }
 
 

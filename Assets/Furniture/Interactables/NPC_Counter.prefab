@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6601302512759158977}
   - component: {fileID: 6188204016195328218}
   - component: {fileID: 5512594925371104584}
+  - component: {fileID: 2759565359006141792}
   m_Layer: 8
   m_Name: NPC_Counter
   m_TagString: Interactable
@@ -130,3 +131,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.36, y: 1.42}
   m_EdgeRadius: 0
+--- !u!114 &2759565359006141792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4858583664298540142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffc31b77f5b3143059e3054a1af88a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
