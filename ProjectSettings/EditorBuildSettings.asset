@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CoffeeMaking.unity
     guid: 9ce7416f015c1a84d83be52087c3303c
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 1ed16aa5bb83445068210bad753d3f6a
   m_configObjects: {}

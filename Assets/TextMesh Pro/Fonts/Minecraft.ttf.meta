@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 182252a8a6df848eea68fad2f5f1ffce
+guid: 4e223e830d0fb49cdadc1b8264754bb3
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -12,7 +12,7 @@ TrueTypeFontImporter:
   - Minecraft
   fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 2
+  fontRenderingMode: 0
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1
