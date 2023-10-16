@@ -12,8 +12,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial.unity
     guid: 4d03235e2aa7b47bea5d95ddc6187d02
   - enabled: 1
-    path: Assets/Scenes/CoffeeMaking.unity
+    path: Assets/Scenes/CMaking.unity
     guid: 9ce7416f015c1a84d83be52087c3303c
+  - enabled: 1
+    path: Assets/Scenes/CMade.unity
+    guid: 6e6c0ad796cf523459517ea56d649ad0
   - enabled: 1
     path: Assets/Scenes/Intro.unity
     guid: 1ed16aa5bb83445068210bad753d3f6a

@@ -123,6 +123,98 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &180485208
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3184166042503727158, guid: 78bb5e1e27f9a7d40bad9ab587e556e7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642694806746999260, guid: 78bb5e1e27f9a7d40bad9ab587e556e7, type: 3}
+      propertyPath: m_Name
+      value: Drinks
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658662366312357709, guid: 78bb5e1e27f9a7d40bad9ab587e556e7, type: 3}
+      propertyPath: coffeePrefab
+      value: 
+      objectReference: {fileID: 180485210}
+    - target: {fileID: 5365063071221799756, guid: 78bb5e1e27f9a7d40bad9ab587e556e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.7008004
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365063071221799756, guid: 78bb5e1e27f9a7d40bad9ab587e556e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.35334283
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365063071221799756, guid: 78bb5e1e27f9a7d40bad9ab587e556e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.4662523
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365063071221799756, guid: 78bb5e1e27f9a7d40bad9ab587e556e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365063071221799756, guid: 78bb5e1e27f9a7d40bad9ab587e556e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365063071221799756, guid: 78bb5e1e27f9a7d40bad9ab587e556e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365063071221799756, guid: 78bb5e1e27f9a7d40bad9ab587e556e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365063071221799756, guid: 78bb5e1e27f9a7d40bad9ab587e556e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365063071221799756, guid: 78bb5e1e27f9a7d40bad9ab587e556e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365063071221799756, guid: 78bb5e1e27f9a7d40bad9ab587e556e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4658662366312357709, guid: 78bb5e1e27f9a7d40bad9ab587e556e7, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4642694806746999260, guid: 78bb5e1e27f9a7d40bad9ab587e556e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 180485211}
+  m_SourcePrefab: {fileID: 100100000, guid: 78bb5e1e27f9a7d40bad9ab587e556e7, type: 3}
+--- !u!1 &180485209 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4642694806746999260, guid: 78bb5e1e27f9a7d40bad9ab587e556e7, type: 3}
+  m_PrefabInstance: {fileID: 180485208}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &180485210 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3184166042503727158, guid: 78bb5e1e27f9a7d40bad9ab587e556e7, type: 3}
+  m_PrefabInstance: {fileID: 180485208}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &180485211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180485209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b210107fedee6264995f01465195ab52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Coffee: {fileID: 0}
 --- !u!1 &995949550
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,8 +639,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 821503172019b2e44a70954ddb217f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coffeeMakingTime: 5
-  timerText: {fileID: 0}
+  coffeeMakingTime: 4
+  Drinks: {fileID: 180485209}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -557,3 +649,4 @@ SceneRoots:
   - {fileID: 1894917330}
   - {fileID: 2002582508}
   - {fileID: 2113477151}
+  - {fileID: 180485208}

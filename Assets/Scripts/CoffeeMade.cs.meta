@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: b210107fedee6264995f01465195ab52
+guid: d305e58195e08ca4b916dc3dc5a81ea4
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - Drinks: {fileID: 4642694806746999260, guid: 78bb5e1e27f9a7d40bad9ab587e556e7, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

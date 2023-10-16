@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class CoffeeMaking : MonoBehaviour
 {
-    public float coffeeMakingTime = 10f; // Time in seconds to make the coffee.
-    public Text timerText; // Reference to a UI text element displaying the timer.
+    public float coffeeMakingTime = 10f; 
+    public GameObject Drinks;
 
     private float timeLeft;
 
@@ -19,14 +19,10 @@ public class CoffeeMaking : MonoBehaviour
     private void Update()
     {
         timeLeft -= Time.deltaTime;
-
-        if (timeLeft <= 0f)
+        
+        if (timeLeft <= 0f )
         {
-            // Coffee is ready, return to the main game scene.
-            SceneManager.LoadScene("Tutorial"); // Replace with the name of your main game scene.
+            SceneManager.LoadScene("CMade");
         }
-
-        // Update the timer display.
-        //timerText.text = "Time left: " + Mathf.Ceil(timeLeft).ToString();
     }
 }
