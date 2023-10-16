@@ -215,6 +215,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Coffee: {fileID: 0}
+  interactionBox: {fileID: 0}
+  interactionText: {fileID: 0}
+  signText: 
 --- !u!1 &995949550
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,7 +642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 821503172019b2e44a70954ddb217f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coffeeMakingTime: 4
+  coffeeMakingTime: 6
   Drinks: {fileID: 180485209}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

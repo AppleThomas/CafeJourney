@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class CoffeeMade : MonoBehaviour
 {
     private bool isPlayerInRange;
     public GameObject Coffee;
+    public GameObject interactionBox;
+    public TextMeshProUGUI interactionText;
+    public string signText;
 
     void Start()
     {
@@ -15,6 +20,16 @@ public class CoffeeMade : MonoBehaviour
 
     void Update()
     {
+        if (isPlayerInRange)
+        {
+            interactionText.text = signText;
+            interactionBox.SetActive(true);
+        }
+        else
+        {
+            interactionBox.SetActive(false);
+        }
+
         if (Input.GetKeyDown(KeyCode.F) && isPlayerInRange)
         {
             SceneManager.LoadScene("CMaking");

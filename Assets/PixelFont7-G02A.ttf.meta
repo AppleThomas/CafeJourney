@@ -1,18 +1,18 @@
 fileFormatVersion: 2
-guid: 4e223e830d0fb49cdadc1b8264754bb3
+guid: eb2d2b501e04b400cb3872f4da99fafe
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
   fontSize: 16
-  forceTextureCase: -2
+  forceTextureCase: -1
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Minecraft
+  - Pixel Font7
   fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 0
+  fontRenderingMode: 2
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1

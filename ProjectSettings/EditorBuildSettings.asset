@@ -16,7 +16,7 @@ EditorBuildSettings:
     guid: 9ce7416f015c1a84d83be52087c3303c
   - enabled: 1
     path: Assets/Scenes/CMade.unity
-    guid: 6e6c0ad796cf523459517ea56d649ad0
+    guid: 713e935652a2d8c4d9f366d989f759e4
   - enabled: 1
     path: Assets/Scenes/Intro.unity
     guid: 1ed16aa5bb83445068210bad753d3f6a
