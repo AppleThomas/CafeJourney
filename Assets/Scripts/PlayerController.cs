@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
         if (canMove)
         {
+            movementInput = InputManager.GetInstance().GetMoveDirection();
             // If movement input is not 0, try to move
             if (movementInput != Vector2.zero)
             {
