@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class CoffeeMachineInteraction : MonoBehaviour
 {
     private bool isPlayerInRange;
     public GameObject Coffee;
+    public GameObject interactionBox;
+    public TextMeshProUGUI interactionText;
+    public string signText;
 
     void Start()
     {
@@ -15,6 +20,16 @@ public class CoffeeMachineInteraction : MonoBehaviour
 
     void Update()
     {
+        if (isPlayerInRange)
+        {   
+            interactionText.text = signText;
+            interactionBox.SetActive(true);
+        }
+        else
+        {
+            interactionBox.SetActive(false);
+        }
+
         if (Input.GetKeyDown(KeyCode.F) && isPlayerInRange)
         {
                 SceneManager.LoadScene("CMaking");
@@ -24,10 +39,13 @@ public class CoffeeMachineInteraction : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("in range");
+
         isPlayerInRange = true;
     }
     void OnTriggerExit2D(Collider2D other)
     {
+        Debug.Log("not in range");
         isPlayerInRange = false;
     }
 }
