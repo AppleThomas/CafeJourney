@@ -30,10 +30,10 @@ public class CoffeeMade : MonoBehaviour
             interactionBox.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.F) && isPlayerInRange)
+        /*if (Input.GetKeyDown(KeyCode.F) && isPlayerInRange)
         {
             SceneManager.LoadScene("CMaking");
-        }
+        }*/
     }
 
 

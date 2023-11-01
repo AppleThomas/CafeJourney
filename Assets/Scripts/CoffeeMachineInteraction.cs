@@ -39,13 +39,13 @@ public class CoffeeMachineInteraction : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("in range");
+        
 
         isPlayerInRange = true;
     }
     void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("not in range");
+        
         isPlayerInRange = false;
     }
 }
