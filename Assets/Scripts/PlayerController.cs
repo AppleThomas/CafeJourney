@@ -25,10 +25,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //if (DialogueManager.GetInstance().dialogueIsPlaying)
-        //{
-        //    return;
-        //}
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            return;
+        }
 
         if (canMove)
         {

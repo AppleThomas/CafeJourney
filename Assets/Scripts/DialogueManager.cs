@@ -37,7 +37,7 @@ public class DialogueManager : MonoBehaviour
         // get all of the choices text 
         choicesText = new TextMeshProUGUI[choices.Length];
         int index = 0;
-        foreach (GameObject choice in choices) 
+        foreach (GameObject choice in choices)
         {
             choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
             index++;
@@ -71,7 +71,7 @@ public class DialogueManager : MonoBehaviour
 
         ContinueStory();
 
-        
+
     }
 
     private void ExitDialogueMode()
@@ -105,7 +105,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         int index = 0;
-        foreach(Choice choice in currentChoices)
+        foreach (Choice choice in currentChoices)
         {
             choices[index].gameObject.SetActive(true);
             choicesText[index].text = choice.text;
@@ -135,9 +135,7 @@ public class DialogueManager : MonoBehaviour
         // NOTE: The below two lines were added to fix a bug after the Youtube video was made
         InputManager.GetInstance().RegisterSubmitPressed(); // this is specific to my InputManager script
         ContinueStory();
-        
+
     }
 
-
 }
-

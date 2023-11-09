@@ -6,6 +6,7 @@ public class InteractableObject : MonoBehaviour
 {
     public void OnInteract()
     {
-        Debug.Log("You used" + name);
+        Debug.Log("You used " + name);
+        LevelManager.GetInstance().LevelUp();
     }
 }

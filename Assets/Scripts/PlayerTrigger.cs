@@ -50,7 +50,7 @@ public class PlayerTrigger : MonoBehaviour
     {
         Debug.Log("Next to " + collidedObject.name);
 
-        if (Input.GetKey(KeyCode.E))
+        if (InputManager.GetInstance().GetInteractPressed())
         {
             collidedObject.GetComponent<InteractableObject>().OnInteract();
         }
