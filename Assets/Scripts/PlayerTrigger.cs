@@ -48,7 +48,7 @@ public class PlayerTrigger : MonoBehaviour
 
     protected virtual void OnCollided(GameObject collidedObject)
     {
-        Debug.Log("Next to " + collidedObject.name);
+        //Debug.Log("Next to " + collidedObject.name);
 
         if (InputManager.GetInstance().GetInteractPressed())
         {

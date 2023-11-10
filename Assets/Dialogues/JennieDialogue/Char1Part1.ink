@@ -1,4 +1,5 @@
 VAR affection = 0
+VAR name = "Jennie"
 -> start
 
 === start ===
@@ -39,7 +40,7 @@ All I've been able to do is sing Cocomelon songs, while dressed as a clown. I co
         ~ affection++
     -
     
-Oh sorry, I forgot to introduce myself, I'm Eugene.
+Oh sorry, I forgot to introduce myself, I'm Jennie.
     * [Nice to meet you]
         ~ affection++
     * [I'm Georgie!]

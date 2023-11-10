@@ -7,9 +7,17 @@ public class LevelManager : MonoBehaviour
 
     public int level = 0;
     private static LevelManager instance;
-    // Start is called before the first frame update
+
+    // NPC's, stirng is name, int is affection
+    public Dictionary<string, int> npcAffection = new Dictionary<string, int>()
+    {
+        {"Jennie", 0 }
+    };
+
     void Awake()
     {
+
+
         if (instance != null)
         {
             Debug.LogError("Found more than one Level Manager in the scene.");
@@ -20,7 +28,7 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print("Current level is: " + level);
+        //print("Current level is: " + level);
     }
 
     public void LevelUp()

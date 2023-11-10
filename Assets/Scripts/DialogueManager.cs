@@ -19,6 +19,9 @@ public class DialogueManager : MonoBehaviour
     public bool dialogueIsPlaying { get; private set; }
     private static DialogueManager instance;
 
+    public int currentAffection;
+    public string npcName;
+
 
     private void Awake()
     {
@@ -90,6 +93,16 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
+            print("affection is:    " + currentStory.variablesState["affection"]);
+            // update affection in current scope
+            currentAffection = (int)currentStory.variablesState["affection"];
+            // get name
+            npcName = (string)currentStory.variablesState["name"];
+
+            // update the affection of NPC in the game as a whole
+            LevelManager.GetInstance().npcAffection[npcName] += currentAffection;
+
+            //print("of:    " + npcName);
             ExitDialogueMode();
         }
     }
