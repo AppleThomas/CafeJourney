@@ -11,8 +11,12 @@ public class LevelManager : MonoBehaviour
     // NPC's, stirng is name, int is affection
     public Dictionary<string, int> npcAffection = new Dictionary<string, int>()
     {
-        {"Jennie", 0 }
+        {"Jennie", 0 },
+        {"Eric", 0 },
+        {"Jessica", 0}
     };
+
+    // to keep track of each NPC progress, make bool dictionary to know if we open a file or not
 
     void Awake()
     {
@@ -40,4 +44,6 @@ public class LevelManager : MonoBehaviour
     {
         return instance;
     }
+
+
 }

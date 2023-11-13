@@ -157,7 +157,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: -767059067, guid: 13287f431e5ff45da804aa3e10a4a87d, type: 3}
+  m_Sprite: {fileID: 98218529, guid: 650c087997688448c86191e1885f6714, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -215,11 +215,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualCue: {fileID: 2431970503566917053}
-  inkJSON1: {fileID: 4900000, guid: 2390284d989594d2da53d9331ff5e73f, type: 3}
-  inkJSON2: {fileID: 4900000, guid: a341357dcf91f43a9baab45f9915b18a, type: 3}
-  inkJSON3: {fileID: 4900000, guid: f4e1e6859c3a247cb9dd7d0e809fc3a2, type: 3}
-  inkJSON4: {fileID: 4900000, guid: feb46b7c8cb8e4f988b9c698c44d7a24, type: 3}
-  inkJSON5: {fileID: 4900000, guid: fe4864ccc43324af49fd9b231dea3794, type: 3}
+  inkJSON1: {fileID: 4900000, guid: 99a9f6fb1067d4ecda1054e7a5088433, type: 3}
+  inkJSON2: {fileID: 4900000, guid: f6150228decde40dfb672c4119193913, type: 3}
+  inkJSON3: {fileID: 4900000, guid: 08b91354f569446f49d75be4f713cd3b, type: 3}
+  inkJSON4: {fileID: 4900000, guid: 1915b57fe41f14d20b6b06f07d0a4c5c, type: 3}
+  inkJSON5: {fileID: 4900000, guid: ec828ca0e06644a63a706ccc444c5e2f, type: 3}
 --- !u!61 &6491119544443085992
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 8261297080501571908}
   - component: {fileID: 5325058825806928195}
   m_Layer: 0
-  m_Name: Jennie
+  m_Name: Eric
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

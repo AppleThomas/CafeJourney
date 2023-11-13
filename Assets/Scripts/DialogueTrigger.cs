@@ -56,9 +56,10 @@ public class DialogueTrigger : MonoBehaviour
                 }
                 else
                 {
+                    // if not enough affection, give 2 to boost them up a little.
                     int currentAffection = LevelManager.GetInstance().npcAffection[npcName];
                     print("before is :" + currentAffection);
-                    LevelManager.GetInstance().npcAffection[npcName] += 5 - (currentAffection % 5);
+                    LevelManager.GetInstance().npcAffection[npcName] += 2;
                     print("After is :" + LevelManager.GetInstance().npcAffection[npcName]);
                     print("You already talked to me fool");
                 }
