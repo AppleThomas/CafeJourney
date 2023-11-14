@@ -26,9 +26,6 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject GenericNPC;
 
 
-
-    // to keep track of each NPC progress, make bool dictionary to know if we open a file or not
-
     void Awake()
     {
         
@@ -38,23 +35,16 @@ public class LevelManager : MonoBehaviour
             Debug.LogError("Found more than one Level Manager in the scene.");
         }
         instance = this;
-
-
-        //Jennie.SetActive(false);
-        //Eric.SetActive(false);
-        //Jessica.SetActive(false);
-        //GenericNPC.SetActive(false);
     }
 
     public void Start()
     {
-        
         Jennie.SetActive(false);
         Eric.SetActive(false);
         Jessica.SetActive(false);
         GenericNPC.SetActive(false);
 
-        print("yeehawww" + Jennie.name);
+        
     }
 
     // Update is called once per frame
@@ -75,26 +65,63 @@ public class LevelManager : MonoBehaviour
         // sets the npclist for current level
         for (int i = 0; i < 4; i++)
         {
-            npcList.Add("NPC");
+            npcList.Add("GenericNPC");
         }
 
-        var lowestNPC = npcAffection.OrderByDescending(pair => pair.Value).Take(1);
-        // add lowest level npc to level
-        foreach (var person in lowestNPC)
+        //print("ordered is ");
+        //foreach (KeyValuePair<string, int> kvp in npcAffection)
+        //    print("Key = " + kvp.Key +  "Value = " + kvp.Value);
+
+        string lowestNPC = npcAffection.Aggregate((l, r) => l.Value < r.Value ? l : r).Key;
+   
+        npcList.Add(lowestNPC);
+
+
+        SpawnNPC();
+    }
+
+    public void SpawnNPC()
+    {
+
+        string firstNPC = npcList.First();
+
+        FindInActiveObjectByName(firstNPC).SetActive(true);
+        
+        
+    }
+
+    public void DespawnNPC()
+    {
+        print("POP");
+        GameObject.Find(npcList.First()).SetActive(false);
+        npcList.RemoveAt(0);
+
+        if (npcList.Count != 0)
         {
-            npcList.Add(person.Key);
+            SpawnNPC();
         }
 
-        print("people in this level is  ");
-        foreach (var x in npcList)
-        {
-            print(x.ToString());
-        }
     }
 
     public static LevelManager GetInstance()
     {
         return instance;
+    }
+
+    GameObject FindInActiveObjectByName(string name)
+    {
+        Transform[] objs = Resources.FindObjectsOfTypeAll<Transform>() as Transform[];
+        for (int i = 0; i < objs.Length; i++)
+        {
+            if (objs[i].hideFlags == HideFlags.None)
+            {
+                if (objs[i].name == name)
+                {
+                    return objs[i].gameObject;
+                }
+            }
+        }
+        return null;
     }
 
 

@@ -91,18 +91,23 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text = currentStory.Continue();
             DisplayChoices();
         }
-        else
+        else 
         {
-            print("affection is:    " + currentStory.variablesState["affection"]);
-            // update affection in current scope
-            currentAffection = (int)currentStory.variablesState["affection"];
-            // get name
-            npcName = (string)currentStory.variablesState["name"];
+            if ((string)currentStory.variablesState["name"] != "GenericNPC")
+            {
+                print("affection is:    " + currentStory.variablesState["affection"]);
+                // update affection in current scope
+                currentAffection = (int)currentStory.variablesState["affection"];
+                // get name
+                npcName = (string)currentStory.variablesState["name"];
 
-            // update the affection of NPC in the game as a whole
-            LevelManager.GetInstance().npcAffection[npcName] += currentAffection;
+                // update the affection of NPC in the game as a whole
+                LevelManager.GetInstance().npcAffection[npcName] += currentAffection;
+
+            }
 
             //print("of:    " + npcName);
+            LevelManager.GetInstance().DespawnNPC();
             ExitDialogueMode();
         }
     }
