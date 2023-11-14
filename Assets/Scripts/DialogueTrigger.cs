@@ -32,36 +32,46 @@ public class DialogueTrigger : MonoBehaviour
             visualCue.SetActive(true);
             if (InputManager.GetInstance().GetInteractPressed())
             {
-                //print("My name is  " + this.transform.parent.name);
                 npcName = this.transform.parent.name;
-                if (LevelManager.GetInstance().npcAffection[npcName] == 0)
+
+                // only do this for actual characters
+                if (npcName != "GenericNPC")
                 {
-                    DialogueManager.GetInstance().EnterDialogueMode(inkJSON1);
-                }
-                else if (LevelManager.GetInstance().npcAffection[npcName] == 5)
-                {
-                    DialogueManager.GetInstance().EnterDialogueMode(inkJSON2);
-                }
-                else if (LevelManager.GetInstance().npcAffection[npcName] == 10)
-                {
-                    DialogueManager.GetInstance().EnterDialogueMode(inkJSON3);
-                }
-                else if (LevelManager.GetInstance().npcAffection[npcName] == 15)
-                {
-                    DialogueManager.GetInstance().EnterDialogueMode(inkJSON4);
-                }
-                else if (LevelManager.GetInstance().npcAffection[npcName] == 20)
-                {
-                    DialogueManager.GetInstance().EnterDialogueMode(inkJSON5);
+                    //print("My name is  " + this.transform.parent.name);
+
+                    if (LevelManager.GetInstance().npcAffection[npcName] == 0)
+                    {
+                        DialogueManager.GetInstance().EnterDialogueMode(inkJSON1);
+                    }
+                    else if (LevelManager.GetInstance().npcAffection[npcName] == 5)
+                    {
+                        DialogueManager.GetInstance().EnterDialogueMode(inkJSON2);
+                    }
+                    else if (LevelManager.GetInstance().npcAffection[npcName] == 10)
+                    {
+                        DialogueManager.GetInstance().EnterDialogueMode(inkJSON3);
+                    }
+                    else if (LevelManager.GetInstance().npcAffection[npcName] == 15)
+                    {
+                        DialogueManager.GetInstance().EnterDialogueMode(inkJSON4);
+                    }
+                    else if (LevelManager.GetInstance().npcAffection[npcName] == 20)
+                    {
+                        DialogueManager.GetInstance().EnterDialogueMode(inkJSON5);
+                    }
+                    else
+                    {
+                        // if not enough affection, give 2 to boost them up a little.
+                        int currentAffection = LevelManager.GetInstance().npcAffection[npcName];
+                        print("before is :" + currentAffection);
+                        LevelManager.GetInstance().npcAffection[npcName] += 2;
+                        print("After is :" + LevelManager.GetInstance().npcAffection[npcName]);
+                        print("You already talked to me fool");
+                    }
                 }
                 else
                 {
-                    // if not enough affection, give 2 to boost them up a little.
-                    int currentAffection = LevelManager.GetInstance().npcAffection[npcName];
-                    print("before is :" + currentAffection);
-                    LevelManager.GetInstance().npcAffection[npcName] += 2;
-                    print("After is :" + LevelManager.GetInstance().npcAffection[npcName]);
-                    print("You already talked to me fool");
+                    DialogueManager.GetInstance().EnterDialogueMode(inkJSON1);
                 }
             }
         }
