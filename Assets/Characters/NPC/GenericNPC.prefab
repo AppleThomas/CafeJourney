@@ -157,7 +157,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 264888543, guid: 028d676f2bc4240f9af201ea4d844c46, type: 3}
+  m_Sprite: {fileID: 1876358964, guid: c9dc50b2cf7784f48b3cab8d7c4189a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -215,11 +215,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualCue: {fileID: 2431970503566917053}
-  inkJSON1: {fileID: 4900000, guid: 368f6987e39904614928e69fe44175a8, type: 3}
-  inkJSON2: {fileID: 4900000, guid: cf9b7395c95ed4683b1a961e197b1895, type: 3}
-  inkJSON3: {fileID: 4900000, guid: 15b194a9ea5084b0f9b70bd1cfbd14dc, type: 3}
-  inkJSON4: {fileID: 4900000, guid: 4de79842cda2145ae92f7b08f285ecb5, type: 3}
-  inkJSON5: {fileID: 4900000, guid: 93f88b8c2e1984b1b9fdcfe59a3385e2, type: 3}
+  inkJSON1: {fileID: 4900000, guid: 1430f35b13d2743cca3db0f200fa75e7, type: 3}
+  inkJSON2: {fileID: 0}
+  inkJSON3: {fileID: 0}
+  inkJSON4: {fileID: 0}
+  inkJSON5: {fileID: 0}
 --- !u!61 &6491119544443085992
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 8261297080501571908}
   - component: {fileID: 5325058825806928195}
   m_Layer: 0
-  m_Name: Jessica
+  m_Name: GenericNPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
