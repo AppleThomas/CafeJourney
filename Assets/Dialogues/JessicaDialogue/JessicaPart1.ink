@@ -12,7 +12,7 @@ statement 1.
         response 2
     -
     
-statement 1.
+statement 2.
     * [choice 1]
         response 1
         ~ affection++
@@ -20,7 +20,7 @@ statement 1.
         response 2
     -
     
-statement 1.
+statement 3.
     * [choice 1]
         response 1
         ~ affection++
@@ -28,7 +28,7 @@ statement 1.
         response 2
     -
     
-statement 1.
+statement 4.
     * [choice 1]
         response 1
         ~ affection++
@@ -36,7 +36,7 @@ statement 1.
         response 2
     -
 
-statement 1.
+statement 5.
     * [choice 1]
         response 1
         ~ affection++
