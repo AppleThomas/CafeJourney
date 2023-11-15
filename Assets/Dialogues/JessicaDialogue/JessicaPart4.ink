@@ -4,43 +4,43 @@ VAR name = "Jessica"
 
 === start ===
 Script 4
-statement 1.
-    * [choice 1]
-        response 1
+Good morning Georgie!!
+    * [Hey Jess! Are you getting your oatmilk latte?]
+        You know it!
         ~ affection++
-    * [choice 2]
-        response 2
+    * [Hi Jess! What can I get for you?]
+        Just a small oat latte, thanks!
     -
     
-statement 1.
-    * [choice 1]
-        response 1
+Girl, I need the caffeine this morning...I stayed up soooo late designing my flyer!
+    * [I'll throw an extra shot in your latte!]
+        Thank you so much!
         ~ affection++
-    * [choice 2]
-        response 2
+    * [That's rough.]
+        It is what it is.
     -
     
-statement 1.
-    * [choice 1]
-        response 1
+Let me show you... here's the flyer!!
+    * [Omg it's so cute!! It really showcases the essence of your fashion style.]
+        Thanks Georgie, I really put time into it. I hope it catches peoples' eyes!
         ~ affection++
-    * [choice 2]
-        response 2
+    * [That's cool!]
+        Thanks!
     -
     
-statement 1.
-    * [choice 1]
-        response 1
+I'm gonna leave my flyers here on the counter for customers to see if that's okay!
+    * [Of course-- I'll encourage customers to take one.]
+        You're the best.
         ~ affection++
-    * [choice 2]
-        response 2
+    * [Sounds good.]
+        Yay!
     -
 
-statement 1.
-    * [choice 1]
-        response 1
+Let me know if anyone asks about my shop! Thanks again for the latte!
+    * [Of course, have a great day Jess.]
+        You too queen!
         ~ affection++
-    * [choice 2]
-        response 2
+    * [You got it.]
+        See ya!
     -
     -> END

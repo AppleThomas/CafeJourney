@@ -4,43 +4,42 @@ VAR name = "Jessica"
 
 === start ===
 Script 1
-statement 1.
-    * [choice 1]
-        response 1
+Hey there... this is my first time stopping by, what do you reccommend?
+    * [I really love an iced latte! Since it's your first time it's on the house.]
+        Omg! That's so sweet of you! 
         ~ affection++
-    * [choice 2]
-        response 2
+    * [I just drink black coffee.]
+        I don't know if I can do that haha... how about a latte instead?
     -
     
-statement 2.
-    * [choice 1]
-        response 1
+It's decorated so cute in here! The city needed a slay new spot like this. 
+    * [I'm so glad you like it! I wanted to make this cafe as cozy and cute as possible.]
+        You've definitely succeeded! I'll have to bring some of my friends by soon to check this place out.
         ~ affection++
-    * [choice 2]
-        response 2
+    * [I tried to make it look nice.]
+        You've done a great job with it!
+    
+I'm Jessica, by the way. Jessica Star. What's your name?
+    * [It's Georgie! Nice to meet you! I'm new to the city so it makes me happy to get to meet cool customers like yourself.]
+        Aww, thanks babe! Welcome to the city-- I know it's intimidating moving here but you'll find your people in no time. 
+        ~ affection++
+    * [I'm Georgie.]
+        Nice to meet you, Georgie.
     -
     
-statement 3.
-    * [choice 1]
-        response 1
+Did you have a cafe back where you're from?
+    * [I didn't-- this is my first shop! I worked at a cafe run by my aunt back home and I wanna make her proud.]
+        You seem to really have your life together... opening a cafe in a new town by yourself? That's so swag.
         ~ affection++
-    * [choice 2]
-        response 2
-    -
-    
-statement 4.
-    * [choice 1]
-        response 1
-        ~ affection++
-    * [choice 2]
-        response 2
+    * [Nope, this is my first cafe.]
+        That's so exciting, I hope it continues to do well.
     -
 
-statement 5.
-    * [choice 1]
-        response 1
+Thanks so much-- this coffee looks delicious. And the latte art? So cute.
+    * [I'm glad you like it! My latte art is a bit rusty... I'm trying to get making a rosetta design down.]
+        I don't know how baristas do it, it's so cool you get to make coffee and art!
         ~ affection++
-    * [choice 2]
-        response 2
+    * [You're welcome, have a good one!]
+        Catch you later!
     -
     -> END
