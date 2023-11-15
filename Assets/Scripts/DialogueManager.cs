@@ -22,6 +22,15 @@ public class DialogueManager : MonoBehaviour
     public int currentAffection;
     public string npcName;
 
+    [Header("Character Portraits")]
+    [SerializeField] private GameObject JenniePortrait;
+    [SerializeField] private GameObject JessicaPortrait;
+    [SerializeField] private GameObject EricPortrait;
+
+
+
+
+
 
     private void Awake()
     {
@@ -36,6 +45,10 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
+
+        JenniePortrait.SetActive(false);
+        JessicaPortrait.SetActive(false);
+        EricPortrait.SetActive(false);
 
         // get all of the choices text 
         choicesText = new TextMeshProUGUI[choices.Length];
@@ -72,6 +85,19 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
+        if ((string)currentStory.variablesState["name"] == "Jennie")
+        {
+            JenniePortrait.SetActive(true);
+        }
+        else if ((string)currentStory.variablesState["name"] == "Jessica")
+        {
+            JessicaPortrait.SetActive(true);
+        }
+        else if ((string)currentStory.variablesState["name"] == "Eric")
+        {
+            EricPortrait.SetActive(true);
+        }
+
         ContinueStory();
 
 
@@ -81,6 +107,9 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
+        JenniePortrait.SetActive(false);
+        JessicaPortrait.SetActive(false);
+        EricPortrait.SetActive(false);
         dialogueText.text = "";
     }
 
