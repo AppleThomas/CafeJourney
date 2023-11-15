@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject Eric;
     [SerializeField] private GameObject Jessica;
     [SerializeField] private GameObject GenericNPC;
+
+    [SerializeField] private TextMeshProUGUI dayCounter;
+    [SerializeField] private TextMeshProUGUI npcUI;
 
 
     void Awake()
@@ -56,7 +60,10 @@ public class LevelManager : MonoBehaviour
             print("level is:    " + level);
             LevelUp();
         }
+
+        dayCounter.text = "Day " + level;
     }
+
 
     public void LevelUp()
     {
@@ -78,6 +85,8 @@ public class LevelManager : MonoBehaviour
 
 
         SpawnNPC();
+
+        npcUI.text = listToText();
     }
 
     public void SpawnNPC()
@@ -92,7 +101,7 @@ public class LevelManager : MonoBehaviour
 
     public void DespawnNPC()
     {
-        print("POP");
+        
         GameObject.Find(npcList.First()).SetActive(false);
         npcList.RemoveAt(0);
 
@@ -100,6 +109,8 @@ public class LevelManager : MonoBehaviour
         {
             SpawnNPC();
         }
+
+        npcUI.text = listToText();
 
     }
 
@@ -123,6 +134,19 @@ public class LevelManager : MonoBehaviour
         }
         return null;
     }
+
+    private string listToText()
+    {
+        string listToTextNPC = "";
+
+        foreach (string person in npcList) {
+            listToTextNPC = listToTextNPC + person + "\n";
+        }
+
+        return listToTextNPC;
+    }
+
+
 
 
 }
