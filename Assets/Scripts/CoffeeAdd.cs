@@ -13,6 +13,7 @@ public class CoffeeAdd : MonoBehaviour
     [SerializeField] GameObject espressoButton;
     [SerializeField] GameObject finishButton;
     [SerializeField] GameObject retryButton;
+    [SerializeField] GameObject exitButton;
     [SerializeField] GameObject waterAdded;
     [SerializeField] GameObject milkAdded;
     [SerializeField] GameObject espressoAdded;
@@ -48,6 +49,7 @@ public class CoffeeAdd : MonoBehaviour
     void Start()
     {
         waterButton.SetActive(true);
+        exitButton.SetActive(true);
         // Disable buttons 2 and 3 initially
         milkButton.SetActive(false);
         espressoButton.SetActive(false);
@@ -62,6 +64,11 @@ public class CoffeeAdd : MonoBehaviour
         waterText.text = "";
         milkText.text = "";
         espressoText.text = "";
+    }
+
+    public void exitToTutorial()
+    {
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void OnButton1Click()
@@ -146,6 +153,7 @@ public class CoffeeAdd : MonoBehaviour
         } 
         if ((!coffeeMaded) && (!espressoMaded) && (!LatteMaded))
         {
+            exitButton.SetActive(false);
             retryButton.SetActive(true);
         }
     }
