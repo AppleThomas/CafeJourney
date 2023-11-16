@@ -5,47 +5,46 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
-public class CoffeeMachineInteraction : MonoBehaviour
+public class Menu : MonoBehaviour
 {
     private bool isPlayerInRange;
-    public GameObject Coffee;
-    public GameObject interactionBox;
-    public TextMeshProUGUI interactionText;
-    public string signText;
+    public GameObject menu;
+    public GameObject menuInteraction;
 
     void Start()
     {
-        //Coffee.SetActive(false);
+
     }
 
     void Update()
     {
         if (isPlayerInRange)
-        {   
-            //interactionText.text = signText;
-            interactionBox.SetActive(true);
+        {
+            menu.SetActive(true);
+            menuInteraction.SetActive(true);
         }
         else
         {
-            interactionBox.SetActive(false);
+            menu.SetActive(false);
+            menuInteraction.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.F) && isPlayerInRange)
         {
-                SceneManager.LoadScene("CMaking");
+            SceneManager.LoadScene("DrinkMenu");
         }
     }
-        
+    public void Exiting()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        
-
         isPlayerInRange = true;
     }
     void OnTriggerExit2D(Collider2D other)
     {
-        
         isPlayerInRange = false;
     }
 }

@@ -97,7 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b210107fedee6264995f01465195ab52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Drinks: {fileID: 0}
+  Coffee: {fileID: 0}
+  interactionBox: {fileID: 0}
+  interactionText: {fileID: 0}
+  signText: 
 --- !u!1 &4642694806746999260
 GameObject:
   m_ObjectHideFlags: 0

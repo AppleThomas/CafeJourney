@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class CoffeeAdd : MonoBehaviour
 {
@@ -18,15 +19,31 @@ public class CoffeeAdd : MonoBehaviour
     [SerializeField] GameObject waterBar;
     [SerializeField] GameObject milkBar;
     [SerializeField] GameObject espressoBar;
+    [SerializeField] GameObject coffeeMade;
+    [SerializeField] GameObject espressoMade;
+    [SerializeField] GameObject LatteMade;
     int progress1 = 0;
     int progress2 = 0;
     int progress3 = 0;
     public Slider slider1;
     public Slider slider2;
     public Slider slider3;
-    private bool waterFull = false;
-    private bool milkFull = false;
-    private bool espressoFull = false;
+    private bool waterCoffee = false;
+    private bool milkCoffee = false;
+    private bool espressoCoffee = false;
+    private bool waterEspresso = false;
+    private bool milkEspresso = false;
+    private bool espressoEspresso = false;
+    private bool waterLatte = false;
+    private bool milkLatte = false;
+    private bool espressoLatte = false;
+    private bool coffeeMaded = false;
+    private bool espressoMaded = false;
+    private bool LatteMaded = false;
+    public static int maded;
+    public TextMeshProUGUI waterText;
+    public TextMeshProUGUI milkText;
+    public TextMeshProUGUI espressoText;
 
     void Start()
     {
@@ -39,7 +56,14 @@ public class CoffeeAdd : MonoBehaviour
         milkBar.SetActive(false);
         espressoBar.SetActive(false);
         retryButton.SetActive(false);
+        coffeeMade.SetActive(false);
+        espressoMade.SetActive(false);
+        LatteMade.SetActive(false);
+        waterText.text = "";
+        milkText.text = "";
+        espressoText.text = "";
     }
+
     public void OnButton1Click()
     {
         Invoke("DisableButton1", 5f);
@@ -54,7 +78,7 @@ public class CoffeeAdd : MonoBehaviour
     }
     public void OnButton4Click()
     {
-        Invoke("DisableButton4", 2f);
+        Invoke("DisableButton4", 1f);
     }
 
     public void DisableButton1()
@@ -62,6 +86,7 @@ public class CoffeeAdd : MonoBehaviour
         // Disable button 1
         waterButton.SetActive(false);
         waterBar.SetActive(false);
+        waterText.text = "";
 
         // Enable button 2
         milkButton.SetActive(true);
@@ -73,23 +98,53 @@ public class CoffeeAdd : MonoBehaviour
         // Disable button 2
         milkButton.SetActive(false);
         milkBar.SetActive(false);
-       
+        milkText.text = "";
+
 
         // Enable button 3
         espressoButton.SetActive(true);
        
     }
+    
     public void DisableButton3()
     {
         // Disable button 3
         espressoButton.SetActive(false);
         espressoBar.SetActive(false);
+        espressoText.text = "";
 
-        // Enable button 4
-        if (waterFull && milkFull && espressoFull)
+        if (waterCoffee && milkCoffee && espressoCoffee)
         {
+            coffeeMaded = true;
+        }
+        if(waterEspresso && milkEspresso && espressoEspresso)
+        {
+            espressoMaded = true;
+        }
+        if(waterLatte && milkLatte && espressoLatte)
+        {
+            LatteMaded = true;
+        }
+        // Enable button 4
+        if (coffeeMaded)//made coffee
+        {
+            maded = 1;
+            coffeeMade.SetActive(true);
             finishButton.SetActive(true);
-        } else
+        } 
+        if (espressoMaded)//made espresso
+        {
+            maded = 2;
+            espressoMade.SetActive(true);
+            finishButton.SetActive(true);
+        }
+        if (LatteMaded)//made latte
+        {
+            maded = 3;
+            LatteMade.SetActive(true);
+            finishButton.SetActive(true);
+        } 
+        if ((!coffeeMaded) && (!espressoMaded) && (!LatteMaded))
         {
             retryButton.SetActive(true);
         }
@@ -125,24 +180,58 @@ public class CoffeeAdd : MonoBehaviour
         espressoBar.SetActive(true);
         Debug.Log("Espresso added to the coffee machine!");
     }
-    
+
     public void UpdateSlider1()    //Progress bars
     {
+        
         progress1++;
         slider1.value = progress1;
-        if(slider1.value == 12)
+        waterText.text = slider1.value.ToString();
+
+        if (slider1.value == 10)
         {
-            waterFull = true;
+            waterCoffee = true;
+            waterEspresso = false;
+            waterLatte = false;
         }
-        
+        if (slider1.value == 5)
+        {
+            waterEspresso = true;
+            waterLatte = false;
+            waterCoffee = false;
+
+        }
+        if (slider1.value == 8)
+        {
+            waterLatte = true;
+            waterCoffee = false;
+            waterEspresso = false;
+        }
+
     }
     public void UpdateSlider2()    //Progress bars
     {
         progress2++;
         slider2.value = progress2;
-        if (slider2.value == 8)
+        milkText.text = slider2.value.ToString();
+
+        if (slider2.value == 10)
         {
-            milkFull = true;
+            milkCoffee = true;
+            milkEspresso = false;
+            milkLatte = false;
+        }
+        if (slider2.value == 5)
+        {
+            milkEspresso = true;
+            milkLatte = false;
+            milkCoffee = false;
+        }
+        if (slider2.value == 20)
+        {
+            milkLatte = true;
+            milkCoffee = false;
+            milkEspresso = false;
         }
 
     }
@@ -150,9 +239,25 @@ public class CoffeeAdd : MonoBehaviour
     {
         progress3++;
         slider3.value = progress3;
+        espressoText.text = slider3.value.ToString();
+
+        if (slider3.value == 10)
+        {
+            espressoCoffee = true;
+            espressoEspresso = false;
+            espressoLatte = false;
+        }
+        if (slider3.value == 20)
+        {
+            espressoEspresso = true;
+            espressoLatte = false;
+            espressoCoffee = false;
+        }
         if (slider3.value == 15)
         {
-            espressoFull = true;
+            espressoLatte = true;
+            espressoCoffee = false;
+            espressoEspresso = false;
         }
 
     }
