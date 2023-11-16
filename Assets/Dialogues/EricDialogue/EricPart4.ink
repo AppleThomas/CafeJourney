@@ -4,43 +4,43 @@ VAR name = "Eric"
 
 === start ===
 Script 4
-statement 1.
-    * [choice 1]
-        response 1
+Good morning, Georgie.
+    * [Hey Eric, glad to see you! I'll get your coffee right out.]
+        You're the best, thanks.
         ~ affection++
-    * [choice 2]
-        response 2
+    * ['Morning!]
+        If I could get my usual black coffee that would be great.
     -
     
-statement 1.
-    * [choice 1]
-        response 1
+Guess what...I was offered a position at my company.
+    * [Dude that's awesome-- you worked so hard for it, and there was a lot of competition. Congrats!]
+        Thanks Geogie, that means a lot to me.
         ~ affection++
-    * [choice 2]
-        response 2
+    * [Period!]
+        Yeah...hahah.
     -
     
-statement 1.
-    * [choice 1]
-        response 1
+I didn't accept the offer. I've been thinking about it all week...but I don't think a boring corporate job is for me. I wanna explore something new.
+    * [Dude! I'm proud of you. That's a hard decision to make, but it's your life. You gotta do what's best for you!]
+        Honestly I'm glad you said that. It feels right, but I know it's not a typical decision.
         ~ affection++
-    * [choice 2]
-        response 2
+    * [Oh, yeah, that makes sense!]
+        I think so at least! I'm a little nervous though...I hope another opportunity presents itself.
     -
     
-statement 1.
-    * [choice 1]
-        response 1
+I know that decision is a little risky, but with the experience the internship gave me I know I can find something.
+    * [This city is huge...there's a place for you, I promise.]
+        You're right. I just have to find something that feels right.
         ~ affection++
-    * [choice 2]
-        response 2
+    * [It'll be hard but you've got this.]
+        Thank you.
     -
 
-statement 1.
-    * [choice 1]
-        response 1
+This coffee tastes different...but good! It kinda tastes like fruit.
+    * [You said you didn't know much about coffee, but you've got the flavor notes down!]
+        I guess I just needed to try some better coffee--I owe it to you!
         ~ affection++
-    * [choice 2]
-        response 2
+    * [This coffee is new, I'm glad you like it.]
+        See you later!
     -
     -> END
