@@ -4,43 +4,43 @@ VAR name = "Eric"
 
 === start ===
 Script 5
-statement 1.
-    * [choice 1]
-        response 1
+Good morning!! I'd love to get a cup of that new coffee I had last time.
+    * [Of course. It's on me today!]
+        You're awesome, thank you!
         ~ affection++
-    * [choice 2]
-        response 2
+    * [You got it.]
+        Thanks!
     -
     
-statement 1.
-    * [choice 1]
-        response 1
+Georgie I was wondering, since you went to business school, do you know anyone cool that I would wanna work for?
+    * [Yeah for sure!! I can reach out to some people, but...I was wondering if you would wanna help me out with some of the business tasks here?]
+        Omg...really??? That would be amazing!
         ~ affection++
-    * [choice 2]
-        response 2
+    * [Would you maybe wanna help out here?]
+        Oh wow...maybe!!
     -
     
-statement 1.
-    * [choice 1]
-        response 1
+What type of help would you need?
+    * [Well, I know you wanted to work somewhere you'd be interested in. Maybe you could help me with finances, but also I could teach you some stuff about coffee?]
+        Wow...I'd love that!!!
         ~ affection++
-    * [choice 2]
-        response 2
+    * [I could use some help with the finances of the shop!]
+        Of course!
     -
     
-statement 1.
-    * [choice 1]
-        response 1
+I know I haven't known you very long, but I'm so glad we met. I would love to talk more with you about this opportunity!
+    * [I'm happy to have met you too! With business growing, I could really use some help]
+        Hell yeah!
         ~ affection++
-    * [choice 2]
-        response 2
+    * [Let's plan a meeting soon.]
+        Sounds good!
     -
 
-statement 1.
-    * [choice 1]
-        response 1
+Thanks for everything, Georgie. Good luck with the rest of your shift!
+    * [Thanks Eric! I'm happy to be here.]
+        See you soon!
         ~ affection++
-    * [choice 2]
-        response 2
+    * [Have a great day!]
+        You too!
     -
     -> END

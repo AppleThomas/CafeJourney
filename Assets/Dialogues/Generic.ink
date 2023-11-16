@@ -1,1 +1,3 @@
+VAR name = "GenericNPC"
+
 Generic!!

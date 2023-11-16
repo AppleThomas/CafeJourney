@@ -4,43 +4,43 @@ VAR name = "Eric"
 
 === start ===
 Script 3
-statement 1.
-    * [choice 1]
-        response 1
+Good morning Georgie! How's it going?
+    * [Hey Eric, it's going well! Been a busy morning so far, I think there's a conference happening next door.]
+        Good to hear! It seems pretty packed in here today.
         ~ affection++
-    * [choice 2]
-        response 2
+    * [It's going alright...I'm pretty tired though.]
+        You're in a good spot for it though-- there's free coffee whenever you need it!
     -
     
-statement 1.
-    * [choice 1]
-        response 1
+It's crazy how many businessmen from my company are here right now...I feel kinda intimidated. I wonder if they know I intern for their company.
+    * [You should introduce yourself to some of them! Hopefully this internship could get you a permanent spot at the company.]
+        You're right...who knows who I might meet. Maybe there are some managers here...
         ~ affection++
-    * [choice 2]
-        response 2
+    * [That's fair, it can be hard to get noticed in a big company.]
+        Yeah, there's a lot of people competing for permanent positions.
     -
     
-statement 1.
-    * [choice 1]
-        response 1
+I don't know how these guys seem interested in this company. Who wants to spend all their time working for a car insurance business.
+    * [What type of business would you wanna work for?]
+        I'm not sure...I don't mind the work I'm doing, but I wanna work for someone who's passionate about what their company does.
         ~ affection++
-    * [choice 2]
-        response 2
+    * [I guess it just pays the bills.]
+        Damn, you're right.
     -
     
-statement 1.
-    * [choice 1]
-        response 1
+If I'm being honest, I don't think I wanna work for this company when my internship is over. I wanna work for a business that's doing something cool, or new.
+    * [That's okay! You're learning so much right now that will help you when you look for a job you really want.]
+        You're right. Once I graduate I can expand my horizons.
         ~ affection++
-    * [choice 2]
-        response 2
+    * [Fair enough, from the look of these guys the company doesn't seem too interesting.]
+        You've got that right.
     -
 
-statement 1.
-    * [choice 1]
-        response 1
+Thanks again for the coffee--I can't get enough of it, it's so flavorful!
+    * [It makes me so happy you like it as much as I do! See you soon.]
+        Bye Georgie!
         ~ affection++
-    * [choice 2]
-        response 2
+    * [See you soon!]
+        See ya!
     -
     -> END

@@ -22,6 +22,23 @@ public class DialogueManager : MonoBehaviour
     public int currentAffection;
     public string npcName;
 
+    [Header("Character Portraits")]
+    [SerializeField] private GameObject JenniePortrait;
+    [SerializeField] private GameObject JessicaPortrait;
+    [SerializeField] private GameObject EricPortrait;
+
+
+    [Header("Affection Hearts")]
+    [SerializeField] private GameObject Heart1;
+    [SerializeField] private GameObject Heart2;
+    [SerializeField] private GameObject Heart3;
+    [SerializeField] private GameObject Heart4;
+    [SerializeField] private GameObject Heart5;
+
+
+
+
+
 
     private void Awake()
     {
@@ -36,6 +53,16 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
+
+        JenniePortrait.SetActive(false);
+        JessicaPortrait.SetActive(false);
+        EricPortrait.SetActive(false);
+
+        Heart1.SetActive(false);
+        Heart2.SetActive(false);
+        Heart3.SetActive(false);
+        Heart4.SetActive(false);
+        Heart5.SetActive(false);
 
         // get all of the choices text 
         choicesText = new TextMeshProUGUI[choices.Length];
@@ -59,6 +86,24 @@ public class DialogueManager : MonoBehaviour
         {
             ContinueStory();
         }
+
+
+        if ((string)currentStory.variablesState["name"] != "GenericNPC")
+        {
+            if ((int)currentStory.variablesState["affection"] >= 1)
+                Heart1.SetActive(true);
+            if ((int)currentStory.variablesState["affection"] >= 2)
+                Heart2.SetActive(true);
+            if ((int)currentStory.variablesState["affection"] >= 3)
+                Heart3.SetActive(true);
+            if ((int)currentStory.variablesState["affection"] >= 4)
+                Heart4.SetActive(true);
+            if ((int)currentStory.variablesState["affection"] >= 5)
+                Heart5.SetActive(true);
+        }
+       
+
+
     }
 
     public static DialogueManager GetInstance()
@@ -68,9 +113,27 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogueMode(TextAsset inkJSON)
     {
+        Heart1.SetActive(false);
+        Heart2.SetActive(false);
+        Heart3.SetActive(false);
+        Heart4.SetActive(false);
+        Heart5.SetActive(false);
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
+
+        if ((string)currentStory.variablesState["name"] == "Jennie")
+        {
+            JenniePortrait.SetActive(true);
+        }
+        else if ((string)currentStory.variablesState["name"] == "Jessica")
+        {
+            JessicaPortrait.SetActive(true);
+        }
+        else if ((string)currentStory.variablesState["name"] == "Eric")
+        {
+            EricPortrait.SetActive(true);
+        }
 
         ContinueStory();
 
@@ -81,6 +144,14 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
+        JenniePortrait.SetActive(false);
+        JessicaPortrait.SetActive(false);
+        EricPortrait.SetActive(false);
+        Heart1.SetActive(false);
+        Heart2.SetActive(false);
+        Heart3.SetActive(false);
+        Heart4.SetActive(false);
+        Heart5.SetActive(false);
         dialogueText.text = "";
     }
 
@@ -88,21 +159,30 @@ public class DialogueManager : MonoBehaviour
     {
         if (currentStory.canContinue)
         {
+            
+
             dialogueText.text = currentStory.Continue();
             DisplayChoices();
         }
-        else
+        else 
         {
-            print("affection is:    " + currentStory.variablesState["affection"]);
-            // update affection in current scope
-            currentAffection = (int)currentStory.variablesState["affection"];
-            // get name
-            npcName = (string)currentStory.variablesState["name"];
+            if ((string)currentStory.variablesState["name"] != "GenericNPC")
+            {
+                if ((string)currentStory.variablesState["name"] != "GenericNPC")
+                    print("total affection is:    " + currentStory.variablesState["affection"]);
+                // update affection in current scope
+                currentAffection = (int)currentStory.variablesState["affection"];
+                // get name
+                npcName = (string)currentStory.variablesState["name"];
 
-            // update the affection of NPC in the game as a whole
-            LevelManager.GetInstance().npcAffection[npcName] += currentAffection;
+                // update the affection of NPC in the game as a whole
+                LevelManager.GetInstance().npcAffection[npcName] += currentAffection;
+
+
+            }
 
             //print("of:    " + npcName);
+            LevelManager.GetInstance().DespawnNPC();
             ExitDialogueMode();
         }
     }
@@ -147,7 +227,13 @@ public class DialogueManager : MonoBehaviour
         currentStory.ChooseChoiceIndex(choiceIndex);
         // NOTE: The below two lines were added to fix a bug after the Youtube video was made
         InputManager.GetInstance().RegisterSubmitPressed(); // this is specific to my InputManager script
+
+
+        
+
         ContinueStory();
+
+        
 
     }
 
