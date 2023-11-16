@@ -3742,6 +3742,7 @@ MonoBehaviour:
   espressoButton: {fileID: 1119071931}
   finishButton: {fileID: 1119071931}
   retryButton: {fileID: 1119071931}
+  exitButton: {fileID: 1119071931}
   waterAdded: {fileID: 1119071931}
   milkAdded: {fileID: 1119071931}
   espressoAdded: {fileID: 1119071931}
