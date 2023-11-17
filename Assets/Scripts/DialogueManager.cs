@@ -7,6 +7,11 @@ using UnityEngine.EventSystems;
 
 public class DialogueManager : MonoBehaviour
 {
+
+    [SerializeField] private GameObject GameUI;
+    [SerializeField] private TextMeshProUGUI NameTag;
+
+
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
@@ -21,6 +26,7 @@ public class DialogueManager : MonoBehaviour
 
     public int currentAffection;
     public string npcName;
+    public bool isGeneric;
 
     [Header("Character Portraits")]
     [SerializeField] private GameObject JenniePortrait;
@@ -34,6 +40,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject Heart3;
     [SerializeField] private GameObject Heart4;
     [SerializeField] private GameObject Heart5;
+
 
 
 
@@ -78,8 +85,14 @@ public class DialogueManager : MonoBehaviour
     {
         if (!dialogueIsPlaying)
         {
+            GameUI.SetActive(true);
+
             return;
         }
+
+        GameUI.SetActive(false);
+
+
 
         // check for player input to continue to next line
         if (InputManager.GetInstance().GetSubmitPressed())
@@ -88,7 +101,7 @@ public class DialogueManager : MonoBehaviour
         }
 
 
-        if ((string)currentStory.variablesState["name"] != "GenericNPC")
+        if (isGeneric == false)
         {
             if ((int)currentStory.variablesState["affection"] >= 1)
                 Heart1.SetActive(true);
@@ -122,18 +135,20 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
-        if ((string)currentStory.variablesState["name"] == "Jennie")
+        if (npcName == "Jennie")
         {
             JenniePortrait.SetActive(true);
         }
-        else if ((string)currentStory.variablesState["name"] == "Jessica")
+        else if (npcName == "Jessica")
         {
             JessicaPortrait.SetActive(true);
         }
-        else if ((string)currentStory.variablesState["name"] == "Eric")
+        else if (npcName == "Eric")
         {
             EricPortrait.SetActive(true);
         }
+
+        NameTag.text = npcName;
 
         ContinueStory();
 
@@ -166,14 +181,11 @@ public class DialogueManager : MonoBehaviour
         }
         else 
         {
-            if ((string)currentStory.variablesState["name"] != "GenericNPC")
+            if (isGeneric == false)
             {
-                if ((string)currentStory.variablesState["name"] != "GenericNPC")
-                    print("total affection is:    " + currentStory.variablesState["affection"]);
                 // update affection in current scope
                 currentAffection = (int)currentStory.variablesState["affection"];
-                // get name
-                npcName = (string)currentStory.variablesState["name"];
+
 
                 // update the affection of NPC in the game as a whole
                 LevelManager.GetInstance().npcAffection[npcName] += currentAffection;
@@ -181,7 +193,6 @@ public class DialogueManager : MonoBehaviour
 
             }
 
-            //print("of:    " + npcName);
             LevelManager.GetInstance().DespawnNPC();
             ExitDialogueMode();
         }
@@ -194,6 +205,7 @@ public class DialogueManager : MonoBehaviour
         // defensive check
         if (currentChoices.Count > choices.Length)
         {
+            print("current choices is amount " + currentChoices.Count + "with length    " + choices.Length);
             Debug.LogError("More choices than UI can support, number of choices given:  " + currentChoices);
         }
 

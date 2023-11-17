@@ -46,4 +46,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
-  dialogueIsPlaying: 0
+  choices:
+  - {fileID: 0}
+  - {fileID: 0}
+  currentAffection: 0
+  npcName: 
+  JenniePortrait: {fileID: 0}
+  JessicaPortrait: {fileID: 0}
+  EricPortrait: {fileID: 0}
+  Heart1: {fileID: 0}
+  Heart2: {fileID: 0}
+  Heart3: {fileID: 0}
+  Heart4: {fileID: 0}
+  Heart5: {fileID: 0}

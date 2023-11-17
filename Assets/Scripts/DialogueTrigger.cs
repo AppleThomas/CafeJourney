@@ -14,6 +14,7 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private TextAsset inkJSON3;
     [SerializeField] private TextAsset inkJSON4;
     [SerializeField] private TextAsset inkJSON5;
+    [SerializeField] private TextAsset GenericDialogue;
 
 
     private bool playerInRange;
@@ -33,12 +34,12 @@ public class DialogueTrigger : MonoBehaviour
             if (InputManager.GetInstance().GetInteractPressed())
             {
                 npcName = this.transform.parent.name;
+                DialogueManager.GetInstance().npcName = this.transform.parent.name;
 
                 // only do this for actual characters
-                if (npcName != "GenericNPC")
+                if (npcName != "GenericNPC" && LevelManager.GetInstance().npcFinished[npcName] == false)
                 {
-                    //print("My name is  " + this.transform.parent.name);
-
+                    DialogueManager.GetInstance().isGeneric = false;
                     if (LevelManager.GetInstance().npcAffection[npcName] == 0)
                     {
                         DialogueManager.GetInstance().EnterDialogueMode(inkJSON1);
@@ -58,20 +59,25 @@ public class DialogueTrigger : MonoBehaviour
                     else if (LevelManager.GetInstance().npcAffection[npcName] == 20)
                     {
                         DialogueManager.GetInstance().EnterDialogueMode(inkJSON5);
+                        LevelManager.GetInstance().npcFinished[npcName] = true;
                     }
                     else
                     {
                         // if not enough affection, give 2 to boost them up a little.
                         int currentAffection = LevelManager.GetInstance().npcAffection[npcName];
-                        print("before is :" + currentAffection);
+                        
                         LevelManager.GetInstance().npcAffection[npcName] += 2;
-                        print("After is :" + LevelManager.GetInstance().npcAffection[npcName]);
-                        print("You already talked to me fool");
+                        DialogueManager.GetInstance().isGeneric = true;
+                        DialogueManager.GetInstance().EnterDialogueMode(GenericDialogue);
+
+
                     }
                 }
                 else
                 {
-                    DialogueManager.GetInstance().EnterDialogueMode(inkJSON1);
+                    DialogueManager.GetInstance().npcName = this.transform.parent.name;
+                    DialogueManager.GetInstance().isGeneric = true;
+                    DialogueManager.GetInstance().EnterDialogueMode(GenericDialogue);
                 }
             }
         }

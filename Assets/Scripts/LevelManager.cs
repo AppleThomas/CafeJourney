@@ -18,6 +18,13 @@ public class LevelManager : MonoBehaviour
         {"Jessica", 0}
     };
 
+    public Dictionary<string, bool> npcFinished = new Dictionary<string, bool>()
+    {
+        {"Jennie", false },
+        {"Eric", false },
+        {"Jessica", false}
+    };
+
     public List<string> npcList = new List<string>();
 
     // NPC objects

@@ -1,3 +1,4 @@
-VAR name = "GenericNPC"
+VAR name = ""
+VAR coffee = "latte"
 
-Generic!!
+Can i get a {coffee} please?

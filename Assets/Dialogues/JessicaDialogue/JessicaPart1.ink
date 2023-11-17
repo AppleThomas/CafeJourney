@@ -3,8 +3,7 @@ VAR name = "Jessica"
 -> start
 
 === start ===
-Script 1
-Hey there... this is my first time stopping by, what do you reccommend?
+Hey there... this is my first time stopping by, what do you recommend?
     * [I really love an iced latte! Since it's your first time it's on the house.]
         Omg! That's so sweet of you! 
         ~ affection++
@@ -18,6 +17,7 @@ It's decorated so cute in here! The city needed a slay new spot like this.
         ~ affection++
     * [I tried to make it look nice.]
         You've done a great job with it!
+    -
     
 I'm Jessica, by the way. Jessica Star. What's your name?
     * [It's Georgie! Nice to meet you! I'm new to the city so it makes me happy to get to meet cool customers like yourself.]
