@@ -7,6 +7,8 @@ using UnityEngine.EventSystems;
 
 public class DialogueManager : MonoBehaviour
 {
+    [Header("Params")]
+    [SerializeField] private float typingSpeed = 0.04f;
 
     [SerializeField] private GameObject GameUI;
     [SerializeField] private TextMeshProUGUI NameTag;
@@ -14,6 +16,7 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
+    [SerializeField] private GameObject continueIcon;
     [SerializeField] private TextMeshProUGUI dialogueText;
 
     [Header("Choices UI")]
@@ -22,6 +25,12 @@ public class DialogueManager : MonoBehaviour
 
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
+
+    private bool canContinueToNextLine = false;
+
+    private Coroutine displayLineCoroutine;
+
+
     private static DialogueManager instance;
 
     public int currentAffection;
@@ -95,7 +104,7 @@ public class DialogueManager : MonoBehaviour
 
 
         // check for player input to continue to next line
-        if (InputManager.GetInstance().GetSubmitPressed())
+        if (canContinueToNextLine && InputManager.GetInstance().GetSubmitPressed())
         {
             ContinueStory();
         }
@@ -174,10 +183,12 @@ public class DialogueManager : MonoBehaviour
     {
         if (currentStory.canContinue)
         {
+            if (displayLineCoroutine != null)
+            {
+                StopCoroutine(displayLineCoroutine);
+            }
+            displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
             
-
-            dialogueText.text = currentStory.Continue();
-            DisplayChoices();
         }
         else 
         {
@@ -195,6 +206,45 @@ public class DialogueManager : MonoBehaviour
 
             LevelManager.GetInstance().DespawnNPC();
             ExitDialogueMode();
+        }
+    }
+
+    private IEnumerator DisplayLine(string line)
+    {
+        // empty the dialogue text
+        dialogueText.text = "";
+
+        continueIcon.SetActive(false);
+        HideChoices();
+
+        canContinueToNextLine = false;
+
+        // display each letter one at a time
+        foreach (char letter in line.ToCharArray())
+        {
+            // check if submit button is pressed
+            if (InputManager.GetInstance().GetSubmitPressed())
+            {
+                dialogueText.text = line;
+                break;
+            }
+
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        // actions to take after line is finished typing
+        continueIcon.SetActive(true);
+        DisplayChoices();
+        canContinueToNextLine = true;
+
+    }
+
+    private void HideChoices()
+    {
+        foreach(GameObject choiceButton in choices)
+        {
+            choiceButton.SetActive(false);
         }
     }
 
@@ -235,15 +285,17 @@ public class DialogueManager : MonoBehaviour
 
     public void MakeChoice(int choiceIndex)
     {
+        if (canContinueToNextLine)
+        {
+            currentStory.ChooseChoiceIndex(choiceIndex);
+            // NOTE: The below two lines were added to fix a bug after the Youtube video was made
+            InputManager.GetInstance().RegisterSubmitPressed(); // this is specific to my InputManager script
 
-        currentStory.ChooseChoiceIndex(choiceIndex);
-        // NOTE: The below two lines were added to fix a bug after the Youtube video was made
-        InputManager.GetInstance().RegisterSubmitPressed(); // this is specific to my InputManager script
 
 
-        
 
-        ContinueStory();
+            ContinueStory();
+        }
 
         
 
