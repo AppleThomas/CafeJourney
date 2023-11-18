@@ -10,7 +10,7 @@ public class DialougeController : MonoBehaviour
     public string[] sentences;
     private int index = 0;
     public float DialougeSpeed;
-
+    private Coroutine displayLineCoroutine;
 
 
 
@@ -33,8 +33,12 @@ public class DialougeController : MonoBehaviour
     {
         if(index <= sentences.Length - 1)
             {
+                if (displayLineCoroutine != null)
+                {
+                    StopCoroutine(displayLineCoroutine);
+                }
                 DialougeText.text = "";
-                StartCoroutine(WriteSentence());
+                displayLineCoroutine = StartCoroutine(WriteSentence());
             }
     }
 

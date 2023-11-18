@@ -154,10 +154,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialougeText: {fileID: 2063053356}
   sentences:
-  - As the week approaches its end, and the sun sets, Georgie thinks back on her
+  - As the month approaches its end, and the sun sets, Georgie thinks back on her
     past week at the cafe.
   - Not only did she craft delicous coffee each and every day, she also grew her
     friendships with the regular customers.
+  - fin.
   DialougeSpeed: 0
 --- !u!4 &88030116
 Transform:

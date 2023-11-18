@@ -43,38 +43,53 @@ public class DialogueTrigger : MonoBehaviour
                     if (LevelManager.GetInstance().npcAffection[npcName] == 0)
                     {
                         DialogueManager.GetInstance().EnterDialogueMode(inkJSON1);
+                        LevelManager.GetInstance().dialogueDone[npcName].Add(1);
                     }
-                    else if (LevelManager.GetInstance().npcAffection[npcName] == 5)
+                    else if (LevelManager.GetInstance().npcAffection[npcName] >= 5 && !LevelManager.GetInstance().dialogueDone[npcName].Contains(2))
                     {
                         DialogueManager.GetInstance().EnterDialogueMode(inkJSON2);
+                        LevelManager.GetInstance().dialogueDone[npcName].Add(2);
                     }
-                    else if (LevelManager.GetInstance().npcAffection[npcName] == 10)
+                    else if (LevelManager.GetInstance().npcAffection[npcName] >= 10 && !LevelManager.GetInstance().dialogueDone[npcName].Contains(3))
                     {
                         DialogueManager.GetInstance().EnterDialogueMode(inkJSON3);
+                        LevelManager.GetInstance().dialogueDone[npcName].Add(3);
                     }
-                    else if (LevelManager.GetInstance().npcAffection[npcName] == 15)
+                    else if (LevelManager.GetInstance().npcAffection[npcName] >= 15 && !LevelManager.GetInstance().dialogueDone[npcName].Contains(4))
                     {
                         DialogueManager.GetInstance().EnterDialogueMode(inkJSON4);
+                        LevelManager.GetInstance().dialogueDone[npcName].Add(4);
                     }
-                    else if (LevelManager.GetInstance().npcAffection[npcName] == 20)
+                    else if (LevelManager.GetInstance().npcAffection[npcName] >= 20 && !LevelManager.GetInstance().dialogueDone[npcName].Contains(5))
                     {
                         DialogueManager.GetInstance().EnterDialogueMode(inkJSON5);
+                        LevelManager.GetInstance().dialogueDone[npcName].Add(5);
                         LevelManager.GetInstance().npcFinished[npcName] = true;
                     }
                     else
                     {
+
+                        foreach (var x in LevelManager.GetInstance().dialogueDone[npcName])
+                        {
+                            Debug.Log(x.ToString());
+                        }
                         // if not enough affection, give 2 to boost them up a little.
-                        int currentAffection = LevelManager.GetInstance().npcAffection[npcName];
-                        
+
                         LevelManager.GetInstance().npcAffection[npcName] += 2;
                         DialogueManager.GetInstance().isGeneric = true;
                         DialogueManager.GetInstance().EnterDialogueMode(GenericDialogue);
-
-
                     }
+
                 }
                 else
                 {
+
+                    // so we don't talk to the same npc over and over again
+                    if (npcName != "GenericNPC")
+                    {
+                        LevelManager.GetInstance().npcAffection[npcName] += 2;
+                    }
+
                     DialogueManager.GetInstance().npcName = this.transform.parent.name;
                     DialogueManager.GetInstance().isGeneric = true;
                     DialogueManager.GetInstance().EnterDialogueMode(GenericDialogue);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -23,6 +24,13 @@ public class LevelManager : MonoBehaviour
         {"Jennie", false },
         {"Eric", false },
         {"Jessica", false}
+    };
+
+    public Dictionary<string, List<int>> dialogueDone = new Dictionary<string, List<int>>()
+    {
+        {"Jennie", new List<int>() },
+        {"Eric",  new List<int>()},
+        {"Jessica", new List<int>()}
     };
 
     public List<string> npcList = new List<string>();
@@ -61,10 +69,13 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (level > 30)
+        {
+            SceneManager.LoadScene("Outro");
+        }
         // level up!
         if (npcList.Count == 0 )
         {
-            print("level is:    " + level);
             LevelUp();
         }
 
