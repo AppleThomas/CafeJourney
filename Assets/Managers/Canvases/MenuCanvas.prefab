@@ -3518,7 +3518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c89df67acb74238bce62eab9520244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DrinkMenuCanvas: {fileID: 6248845954196987265}
+  DrinkMenuPanel: {fileID: 0}
   menuIsOpen: 0
 --- !u!1 &6287371043510116538
 GameObject:

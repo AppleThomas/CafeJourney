@@ -45,9 +45,29 @@ public class CoffeeAdd : MonoBehaviour
     public TextMeshProUGUI waterText;
     public TextMeshProUGUI milkText;
     public TextMeshProUGUI espressoText;
+    public GameObject coffeePanel;
+    public bool coffeeOpen;
+    public static CoffeeAdd instance;
+    private Drink drinkMade;
 
     void Start()
     {
+        
+        
+    }
+
+    private void Awake()
+    {
+        coffeePanel.SetActive(false);
+        coffeeOpen = false;
+        instance = this;
+    }
+
+    public void openCoffee()
+    {
+        coffeePanel.SetActive(true);
+        coffeeOpen = true;
+
         waterButton.SetActive(true);
         exitButton.SetActive(true);
         // Disable buttons 2 and 3 initially
@@ -64,12 +84,21 @@ public class CoffeeAdd : MonoBehaviour
         waterText.text = "";
         milkText.text = "";
         espressoText.text = "";
+        drinkMade = new Drink();
     }
 
-    public void exitToTutorial()
+    public void exitCoffee()
     {
-        SceneManager.LoadScene("Tutorial");
+        coffeeOpen = false;
+        coffeePanel.SetActive(false);
     }
+
+    public static CoffeeAdd getInstance()
+    {
+        return instance;
+    }
+
+
 
     public void OnButton1Click()
     {
@@ -159,14 +188,15 @@ public class CoffeeAdd : MonoBehaviour
     }
     public void RetryButton()
     {
-        SceneManager.LoadScene("CMaking");
+        openCoffee();
+
     }
 
 
-    public void DisableButton4()
-    {
-        SceneManager.LoadScene("CMade");
-    }
+    //public void DisableButton4()
+    //{
+    //    SceneManager.LoadScene("CMade");
+    //}
 
     public void AddWater()
     {

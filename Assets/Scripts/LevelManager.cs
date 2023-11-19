@@ -34,9 +34,7 @@ public class LevelManager : MonoBehaviour
     };
 
     public List<string> npcList = new List<string>();
-    public bool initialTalkDone = false;
-    public bool waitingDialogueDone = false;
-    public bool thanksDialogue = false;
+    
 
     // NPC objects
     [SerializeField] private GameObject Jennie;

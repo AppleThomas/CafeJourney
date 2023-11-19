@@ -5,34 +5,31 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
+
+// use coffee add
 public class CoffeeMachineInteraction : MonoBehaviour
 {
     private bool isPlayerInRange;
-    public GameObject Coffee;
-    public GameObject interactionBox;
-    public TextMeshProUGUI interactionText;
-    public string signText;
+    public GameObject interactionVisual;
+    
 
-    void Start()
-    {
-        //Coffee.SetActive(false);
-    }
+
 
     void Update()
     {
-        if (isPlayerInRange)
+        if (isPlayerInRange && !CoffeeAdd.getInstance().coffeeOpen)
         {   
             //interactionText.text = signText;
-            interactionBox.SetActive(true);
+            interactionVisual.SetActive(true);
         }
         else
         {
-            interactionBox.SetActive(false);
+            interactionVisual.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.F) && isPlayerInRange)
         {
-                SceneManager.LoadScene("CMaking");
+            CoffeeAdd.getInstance().openCoffee();
         }
     }
         

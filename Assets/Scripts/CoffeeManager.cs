@@ -20,17 +20,17 @@ public class CoffeeManager : MonoBehaviour
         DrinkList.Add(new Drink
         {
             drinkName = "Espresso",
-            water = 5,
-            milk = 5,
-            espresso = 20
+            water = 1,
+            milk = 1,
+            espresso = 10
         });
 
         DrinkList.Add(new Drink
         {
             drinkName = "Latte",
-            water = 8,
-            milk = 20,
-            espresso = 15
+            water = 3,
+            milk = 8,
+            espresso = 5
         });
 
     }

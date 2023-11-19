@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         
-        if (DialogueManager.GetInstance().dialogueIsPlaying || (MenuCanvas.getInstance().menuIsOpen))
+        if (DialogueManager.GetInstance().dialogueIsPlaying || (MenuCanvas.getInstance().menuIsOpen) || CoffeeAdd.getInstance().coffeeOpen)
         {
             return;
         }
