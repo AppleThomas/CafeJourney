@@ -18,12 +18,17 @@ public class DialogueTrigger : MonoBehaviour
 
 
     private bool playerInRange;
+    public bool initialTalkDone = false;
+    public bool gotCoffee = false;
     string npcName;
+    public static DialogueTrigger instance;
+
 
     private void Awake()
     {
         visualCue.SetActive(false);
         playerInRange = false;
+        instance = this;
     }
 
     private void Update()
@@ -35,6 +40,12 @@ public class DialogueTrigger : MonoBehaviour
             {
                 npcName = this.transform.parent.name;
                 DialogueManager.GetInstance().npcName = this.transform.parent.name;
+
+                if (initialTalkDone == false)
+                {
+                    CoffeeManager.GetInstance().getRandomDrink();
+                    print("random has been random");
+                }
 
                 // only do this for actual characters
                 if (npcName != "GenericNPC" && LevelManager.GetInstance().npcFinished[npcName] == false)
@@ -116,5 +127,11 @@ public class DialogueTrigger : MonoBehaviour
         {
             playerInRange = false;
         }
+    }
+
+
+    public static DialogueTrigger getInstance()
+    {
+        return instance;
     }
 }

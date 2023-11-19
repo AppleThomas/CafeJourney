@@ -11,33 +11,30 @@ public class Menu : MonoBehaviour
     public GameObject menu;
     public GameObject menuInteraction;
 
-    void Start()
-    {
-
-    }
 
     void Update()
     {
-        if (isPlayerInRange)
+
+        if (isPlayerInRange && !(MenuCanvas.getInstance().menuIsOpen))
         {
-            menu.SetActive(true);
             menuInteraction.SetActive(true);
+
         }
         else
         {
-            menu.SetActive(false);
             menuInteraction.SetActive(false);
         }
-
-        if (Input.GetKeyDown(KeyCode.F) && isPlayerInRange)
+        if (isPlayerInRange)
         {
-            SceneManager.LoadScene("DrinkMenu");
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                MenuCanvas.getInstance().openMenu();
+
+            }
         }
     }
-    public void Exiting()
-    {
-        SceneManager.LoadScene("Tutorial");
-    }
+
+ 
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -47,4 +44,6 @@ public class Menu : MonoBehaviour
     {
         isPlayerInRange = false;
     }
+
+  
 }
