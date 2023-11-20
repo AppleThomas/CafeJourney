@@ -1,15 +1,15 @@
 VAR affection = 0
 VAR name = "Jennie"
+VAR coffee = ""
 -> start
 
 === start ===
-Script 2
 Good morning, how are you?
     * [I'm doing well, your name is Jennie, right?]
-        Yeah it is! It's so sweet you remembered! Your name is Georgie, right? Could I get an iced americano?
+        Yeah it is! It's so sweet you remembered! Your name is Georgie, right? Could I get a {coffee}?
         ~ affection++
     * [Not awesome...]
-        Oof, sorry to hear that...is there any way I can get an iced americano?
+        Oof, sorry to hear that...is there any way I can get a {coffee}?
     -
     
 My show was last night!
@@ -24,11 +24,11 @@ My show was last night!
     -
     
 I'm so nervous to go to this audition though... this really could be the next step in my music career!
+    * [You're right, that sounds pretty intimidating]
+        Yeah, I've never done anything like this.
     * [You've got this!!]
         ...yyou really think so?
         ~ affection++
-    * [You're right, that sounds pretty intimidating]
-        Yeah, I've never done anything like this.
     -
     
 I've been thinking about what songs I should perform for the record label. I don't know what would impress them.
@@ -40,10 +40,10 @@ I've been thinking about what songs I should perform for the record label. I don
     -
 
 Well, I'd better be off. My audition is in 20 minutes!
+    * [Goodbye!]
+        See you!
     * [Good luck, see you soon Jennie!]
         Thanks so much Georgie, you're the best!
         ~ affection++
-    * [Goodbye!]
-        See you!
     -
     -> END

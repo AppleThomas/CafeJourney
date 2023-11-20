@@ -1,10 +1,10 @@
 VAR affection = 0
 VAR name = "Eric"
+VAR coffee = ""
 -> start
 
 === start ===
-Script 5
-Good morning!! I'd love to get a cup of that new coffee I had last time.
+Good morning!! I'd love to get a cup of that new {coffee}.
     * [Of course. It's on me today!]
         You're awesome, thank you!
         ~ affection++
@@ -21,11 +21,11 @@ Georgie I was wondering, since you went to business school, do you know anyone c
     -
     
 What type of help would you need?
+    * [I could use some help with the finances of the shop!]
+        Of course!
     * [Well, I know you wanted to work somewhere you'd be interested in. Maybe you could help me with finances, but also I could teach you some stuff about coffee?]
         Wow...I'd love that!!!
         ~ affection++
-    * [I could use some help with the finances of the shop!]
-        Of course!
     -
     
 I know I haven't known you very long, but I'm so glad we met. I would love to talk more with you about this opportunity!
@@ -37,10 +37,10 @@ I know I haven't known you very long, but I'm so glad we met. I would love to ta
     -
 
 Thanks for everything, Georgie. Good luck with the rest of your shift!
+    * [Have a great day!]
+        You too!
     * [Thanks Eric! I'm happy to be here.]
         See you soon!
         ~ affection++
-    * [Have a great day!]
-        You too!
     -
     -> END

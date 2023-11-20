@@ -89,7 +89,7 @@ public class LevelManager : MonoBehaviour
         level++;
 
         // sets the npclist for current level
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 0; i++)
         {
             npcList.Add("GenericNPC");
         }
@@ -110,6 +110,7 @@ public class LevelManager : MonoBehaviour
 
     public void SpawnNPC()
     {
+        DialogueManager.GetInstance().initialTalkDone = false;
 
         string firstNPC = npcList.First();
 

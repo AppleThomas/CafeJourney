@@ -1,1 +1,1 @@
-﻿{"inkVersion":21,"root":[["^Can i get a ","ev",{"VAR?":"coffee"},"out","/ev","^ please?","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"global decl":["ev","str","^","/str",{"VAR=":"name"},"str","^","/str",{"VAR=":"coffee"},"/ev","end",null],"#f":1}],"listDefs":{}}
+﻿{"inkVersion":21,"root":[["^Can i get a ","ev",{"VAR?":"coffee"},"out","/ev","^ please?","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"global decl":["ev","str","^","/str",{"VAR=":"name"},"str","^","/str",{"VAR=":"coffee"},0,{"VAR=":"affection"},"/ev","end",null],"#f":1}],"listDefs":{}}

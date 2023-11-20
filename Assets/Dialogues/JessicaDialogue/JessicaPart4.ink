@@ -1,23 +1,23 @@
 VAR affection = 0
 VAR name = "Jessica"
+VAR coffee = ""
 -> start
 
 === start ===
-Script 4
 Good morning Georgie!!
-    * [Hey Jess! Are you getting your oatmilk latte?]
+    * [Hey Jess! Are you getting your {coffee}?]
         You know it!
         ~ affection++
     * [Hi Jess! What can I get for you?]
-        Just a small oat latte, thanks!
+        Just a {coffee}, thanks!
     -
     
 Girl, I need the caffeine this morning...I stayed up soooo late designing my flyer!
-    * [I'll throw an extra shot in your latte!]
-        Thank you so much!
-        ~ affection++
     * [That's rough.]
         It is what it is.
+    * [This coffee should do the trick!]
+        Thank you so much!
+        ~ affection++
     -
     
 Let me show you... here's the flyer!!

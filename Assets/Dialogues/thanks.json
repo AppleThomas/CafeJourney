@@ -1,1 +1,1 @@
-﻿{"inkVersion":21,"root":[["^Thank you for the ","ev",{"VAR?":"coffee"},"out","/ev","^.","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"global decl":["ev","str","^","/str",{"VAR=":"coffee"},"/ev","end",null],"#f":1}],"listDefs":{}}
+﻿{"inkVersion":21,"root":[["^Thank you for the ","ev",{"VAR?":"coffee"},"out","/ev","^.","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"global decl":["ev","str","^","/str",{"VAR=":"coffee"},0,{"VAR=":"affection"},"/ev","end",null],"#f":1}],"listDefs":{}}

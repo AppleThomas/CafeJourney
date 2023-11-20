@@ -1,15 +1,15 @@
 VAR affection = 0
 VAR name = "Eric"
+VAR coffee = ""
 -> start
 
 === start ===
-Script 2
 Good morning! Georgie, is it?
-    * [Yep! Eric, right?]
-        You got it! Good to see you. Can I get the same black coffee I had the other day?
-        ~ affection++
     * [Yeah, good morning! What can I get for you?]
-        Just a black coffee--light roast, please!
+        Just a {coffee}, please!
+    * [Yep! Eric, right?]
+        You got it! Good to see you. Can I get some {coffee}
+        ~ affection++
     -
     
 How's business going? I remember you said that you run this place yourself.
@@ -21,11 +21,11 @@ How's business going? I remember you said that you run this place yourself.
     -
     
 Did you go to school for anything or did you know you were gonna open a cafe?
+    * [I went to university but it wasn't a great time.]
+        Damn, sorry to hear that. At least you found success after!
     * [Both! I went to school for business since I knew I would have to be pretty business-savvy.]
         That's so cool...you know how to run all the different aspects of a cafe.
         ~ affection++
-    * [I went to university but it wasn't a great time.]
-        Damn, sorry to hear that. At least you found success after!
     -
     
 I'm actually in business school right now...alongside my internship. Unpaid, of course. 

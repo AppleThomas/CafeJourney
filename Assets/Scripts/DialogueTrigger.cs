@@ -34,7 +34,6 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Update()
     {
-        //print("coffee done is " + CoffeeManager.GetInstance().coffeeDone);
 
         if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
@@ -47,6 +46,7 @@ public class DialogueTrigger : MonoBehaviour
                 if (DialogueManager.GetInstance().initialTalkDone == false)
                 {
                     CoffeeManager.GetInstance().getRandomDrink();
+                    //Debug.Log("randomized");
                 }
 
                 
@@ -56,7 +56,7 @@ public class DialogueTrigger : MonoBehaviour
                     
                 }
                 // only do this for actual characters
-                else if (npcName != "GenericNPC" && LevelManager.GetInstance().npcFinished[npcName] == false)
+                else if (npcName != "GenericNPC" && LevelManager.GetInstance().npcFinished[npcName] == false && !DialogueManager.GetInstance().initialTalkDone)
                 {
                     DialogueManager.GetInstance().isGeneric = false;
                     if (LevelManager.GetInstance().npcAffection[npcName] == 0)
@@ -88,10 +88,7 @@ public class DialogueTrigger : MonoBehaviour
                     else
                     {
 
-                        foreach (var x in LevelManager.GetInstance().dialogueDone[npcName])
-                        {
-                            Debug.Log(x.ToString());
-                        }
+                        
                         // if not enough affection, give 2 to boost them up a little.
 
                         LevelManager.GetInstance().npcAffection[npcName] += 2;
@@ -102,9 +99,8 @@ public class DialogueTrigger : MonoBehaviour
                 }
                 else
                 {
-
                     // so we don't talk to the same npc over and over again
-                    if (npcName != "GenericNPC")
+                    if (npcName != "GenericNPC" && !DialogueManager.GetInstance().initialTalkDone)
                     {
                         LevelManager.GetInstance().npcAffection[npcName] += 2;
                     }

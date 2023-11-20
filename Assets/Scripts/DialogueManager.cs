@@ -112,6 +112,7 @@ public class DialogueManager : MonoBehaviour
         }
 
 
+        
         if (isGeneric == false)
         {
             if ((int)currentStory.variablesState["affection"] >= 1)
@@ -212,12 +213,17 @@ public class DialogueManager : MonoBehaviour
             }
             if (CoffeeManager.GetInstance().coffeeDone == true)
             {
+                initialTalkDone = false;
                 LevelManager.GetInstance().DespawnNPC();
                 CoffeeManager.GetInstance().coffeeDone = false;
-                ExitDialogueMode();
+                
+            }
+            else
+            {
+                initialTalkDone = true;
             }
 
-            initialTalkDone = true;
+            
             ExitDialogueMode();
         }
     }
@@ -268,7 +274,6 @@ public class DialogueManager : MonoBehaviour
         // defensive check
         if (currentChoices.Count > choices.Length)
         {
-            print("current choices is amount " + currentChoices.Count + "with length    " + choices.Length);
             Debug.LogError("More choices than UI can support, number of choices given:  " + currentChoices);
         }
 

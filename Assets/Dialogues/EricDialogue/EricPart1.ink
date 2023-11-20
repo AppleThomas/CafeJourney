@@ -1,15 +1,16 @@
 VAR affection = 0
 VAR name = "Eric"
+VAR coffee = ""
 -> start
 
 === start ===
-Hi there, could I just get a black coffee?
-statement 1.
-    * [Of course! We have a really yummy light roast on brew right now, is that good?]
-        Sure thing, I trust you! I don't know too much about coffee.
-        ~ affection++
+Hi there, could I just get a {coffee}?
     * [Coming right up!]
         Thanks so much.
+        
+    * [Of course! We have a really yummy light roast on brew right now, is that good?]
+        Sure thing, I trust you! I don't know too much about {coffee}.
+        ~ affection++
     -
     
 I haven't seen this place before, how long has this cafe been open?
@@ -36,11 +37,11 @@ Working at a place like this seems so nice. You get to talk to new people all th
         I bet.
     -
 
-Wow...this coffee is so flavorful. The black coffee I usually get tastes like burning...but at least it has caffeine.
-    * [I'm so glad you like it! I try to source the best beans I can.]
+The black coffee I usually get tastes like burning...but at least it has caffeine. I'll let you do your thing now.
+    * [I hope you'll like it!]
+        Have a good one!
+    * [I try to source the best beans I can so I'm sure you'll like it.]
         I can tell!! Thanks so much.
         ~ affection++
-    * [Glad you like it!]
-        Have a good one!
     -
     -> END

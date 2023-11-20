@@ -1,9 +1,10 @@
 VAR affection = 0
 VAR name = "Jennie"
+VAR coffee = ""
 -> start
 
 === start ===
-Oh hey! Can I just get an Americano please? 
+Oh hey! Can I just get an {coffee} please? 
 
 I have a big show tonight, and it would be bad if I just start snoozing during my set.
     * [That's fantastic, what do you do?!]
