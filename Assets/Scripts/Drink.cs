@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Drink
 {
-    public string drinkName;
-    public int water;
-    public int milk;
-    public int espresso;
+    public string drinkName = "N/A";
+    public int water = 0;
+    public int milk = 0;
+    public int espresso = 0;
 }

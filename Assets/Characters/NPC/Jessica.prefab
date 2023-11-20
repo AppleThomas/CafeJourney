@@ -220,6 +220,9 @@ MonoBehaviour:
   inkJSON3: {fileID: 4900000, guid: 15b194a9ea5084b0f9b70bd1cfbd14dc, type: 3}
   inkJSON4: {fileID: 4900000, guid: 4de79842cda2145ae92f7b08f285ecb5, type: 3}
   inkJSON5: {fileID: 4900000, guid: 93f88b8c2e1984b1b9fdcfe59a3385e2, type: 3}
+  GenericDialogue: {fileID: 0}
+  ThankYou: {fileID: 0}
+  gotCoffee: 0
 --- !u!61 &6491119544443085992
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -309,7 +312,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8458574055144998926
 Transform:
   m_ObjectHideFlags: 0

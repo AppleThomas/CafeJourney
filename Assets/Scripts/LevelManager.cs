@@ -131,6 +131,11 @@ public class LevelManager : MonoBehaviour
         }
 
         npcUI.text = listToText();
+        //CoffeeManager.GetInstance().currentDrink.drinkName = "N/A";
+        //CoffeeManager.GetInstance().currentDrink.water = 0;
+        //CoffeeManager.GetInstance().currentDrink.milk = 0;
+        //CoffeeManager.GetInstance().currentDrink.espresso = 0;
+        CoffeeManager.GetInstance().currentDrink = null;
 
     }
 
