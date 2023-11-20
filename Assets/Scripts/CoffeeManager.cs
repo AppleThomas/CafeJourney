@@ -7,6 +7,7 @@ public class CoffeeManager : MonoBehaviour
     private static CoffeeManager instance;
     public List<Drink> DrinkList = new List<Drink>();
     public Drink currentDrink;
+    public bool coffeeDone = false;
     // Start is called before the first frame update
     private void Start()
     {
@@ -49,6 +50,7 @@ public class CoffeeManager : MonoBehaviour
     public void getRandomDrink()
     {
         currentDrink = DrinkList[Random.Range(0, DrinkList.Count)];
+        coffeeDone = false;
     }
 
     public static CoffeeManager GetInstance()

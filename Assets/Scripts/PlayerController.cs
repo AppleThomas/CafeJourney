@@ -13,12 +13,14 @@ public class PlayerController : MonoBehaviour
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     bool canMove = true;
     Animator animator;
+    public GameObject coffeeCup;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
+        coffeeCup.SetActive(false);
 
     }
 
@@ -29,6 +31,15 @@ public class PlayerController : MonoBehaviour
         if (DialogueManager.GetInstance().dialogueIsPlaying || (MenuCanvas.getInstance().menuIsOpen) || CoffeeAdd.getInstance().coffeeOpen)
         {
             return;
+        }
+
+        if (CoffeeManager.GetInstance().coffeeDone)
+        {
+            coffeeCup.SetActive(true);
+        }
+        else
+        {
+            coffeeCup.SetActive(false);
         }
 
         if (canMove)

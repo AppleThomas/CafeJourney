@@ -36,7 +36,6 @@ public class DialogueManager : MonoBehaviour
     public int currentAffection;
     public string npcName;
     public bool isGeneric;
-    private Drink currentDrink;
 
     [Header("Character Portraits")]
     [SerializeField] private GameObject JenniePortrait;
@@ -50,6 +49,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject Heart3;
     [SerializeField] private GameObject Heart4;
     [SerializeField] private GameObject Heart5;
+
+    public bool initialTalkDone = false;
 
 
 
@@ -209,12 +210,14 @@ public class DialogueManager : MonoBehaviour
 
 
             }
-            if (DialogueTrigger.getInstance().gotCoffee == true)
+            if (CoffeeManager.GetInstance().coffeeDone == true)
             {
                 LevelManager.GetInstance().DespawnNPC();
+                CoffeeManager.GetInstance().coffeeDone = false;
+                ExitDialogueMode();
             }
 
-            DialogueTrigger.getInstance().initialTalkDone = true;
+            initialTalkDone = true;
             ExitDialogueMode();
         }
     }

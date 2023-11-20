@@ -15,10 +15,11 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private TextAsset inkJSON4;
     [SerializeField] private TextAsset inkJSON5;
     [SerializeField] private TextAsset GenericDialogue;
+    [SerializeField] private TextAsset ThankYou;
 
 
     private bool playerInRange;
-    public bool initialTalkDone = false;
+    
     public bool gotCoffee = false;
     string npcName;
     public static DialogueTrigger instance;
@@ -33,6 +34,8 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Update()
     {
+        //print("coffee done is " + CoffeeManager.GetInstance().coffeeDone);
+
         if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
             visualCue.SetActive(true);
@@ -41,14 +44,19 @@ public class DialogueTrigger : MonoBehaviour
                 npcName = this.transform.parent.name;
                 DialogueManager.GetInstance().npcName = this.transform.parent.name;
 
-                if (initialTalkDone == false)
+                if (DialogueManager.GetInstance().initialTalkDone == false)
                 {
                     CoffeeManager.GetInstance().getRandomDrink();
-                    print("random has been random");
                 }
 
+                
+                if (CoffeeManager.GetInstance().coffeeDone)
+                {
+                    DialogueManager.GetInstance().EnterDialogueMode(ThankYou);
+                    
+                }
                 // only do this for actual characters
-                if (npcName != "GenericNPC" && LevelManager.GetInstance().npcFinished[npcName] == false)
+                else if (npcName != "GenericNPC" && LevelManager.GetInstance().npcFinished[npcName] == false)
                 {
                     DialogueManager.GetInstance().isGeneric = false;
                     if (LevelManager.GetInstance().npcAffection[npcName] == 0)

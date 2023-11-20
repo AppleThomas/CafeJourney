@@ -88,6 +88,7 @@ public class CoffeeAdd : MonoBehaviour
                 drinkMade.milk == desiredCoffee.milk &&
                 drinkMade.espresso == desiredCoffee.espresso)
             {
+                CoffeeManager.GetInstance().coffeeDone = true;
                 exitCoffee();
             }
             else
